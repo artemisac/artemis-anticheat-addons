@@ -1,0 +1,9 @@
+name: GeyseyAddon
+version: ${project.version}
+main: ac.artemis.addons.geyser.GeyseyAddon
+api-version: 1.16
+prefix: Artemis
+softdepend: [ Artemis ]
+authors: [ Ghast ]
+description: Artemis geyser addon
+website: https://artemis.ac
