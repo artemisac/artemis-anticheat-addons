@@ -1,0 +1,11 @@
+name: ArtemisBungee
+version: ${project.version}
+main: ac.artemis.bungee.spigot.SpigotPlugin
+authors: [ Ghast ]
+description: Bungee alerts for Artemis
+website: https://artemis.ac
+load: POSTWORLD
+softdepend:
+  - Loader
+  - ArtemisLoader
+  - Artemis

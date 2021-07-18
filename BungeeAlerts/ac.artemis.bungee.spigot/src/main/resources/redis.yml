@@ -1,0 +1,7 @@
+connect:
+  host: localhost
+  port: 6379
+  password: admin
+ssl: false
+timeout: 0
+name: ArtemisServer-1
