@@ -2,6 +2,7 @@ package ac.artemis.bungee.spigot;
 
 import ac.artemis.anticheat.api.ArtemisServerClient;
 import ac.artemis.anticheat.api.alert.Alert;
+import ac.artemis.anticheat.api.alert.Severity;
 import ac.artemis.anticheat.api.listener.VerboseListener;
 import ac.artemis.bungee.spigot.utils.Configuration;
 import ac.artemis.bungeealerts.BungeeAlert;
@@ -36,6 +37,9 @@ public class ArtemisProvider implements BungeeProvider {
         this.verboseListener = new VerboseListener() {
             @Override
             public void receive(Alert alert) {
+                if (!alert.getSeverity().equals(Severity.VIOLATION))
+                    return;
+
                 pipeline.shareAlert(new BungeeAlert(name, alert));
             }
         };
@@ -65,5 +69,9 @@ public class ArtemisProvider implements BungeeProvider {
     @Override
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
